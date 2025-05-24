@@ -3,3 +3,9 @@
 -- create new conservation_db database
 CREATE DATABASE conservation_db;
 
+-- Create rangers Table 
+CREATE TABLE rangers (
+    ranger_id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    region VARCHAR(80) NOT NULL
+);
