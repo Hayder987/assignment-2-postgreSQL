@@ -48,10 +48,10 @@ INSERT INTO rangers (name, region) VALUES
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
 ('Snow Leopard', 'Panthera uncia', '1775-01-01', 'Endangered'),
 ('Red Panda', 'Ailurus fulgens', '1825-01-01', 'Vulnerable'),
-('Dodo', 'Raphus cucullatus', '1598-01-01', 'Historic'),
+('Dodo', 'Raphus cucullatus', '1598-01-01', 'Endangered'),
 ('Bengal Tiger', 'Panthera tigris tigris', '1758-01-01', 'Endangered'),
 ('Indian Pangolin', 'Manis crassicaudata', '1822-01-01', 'Vulnerable'),
-('Passenger Pigeon', 'Ectopistes migratorius', '1800-01-01', 'Historic'),
+('Passenger Pigeon', 'Ectopistes migratorius', '1800-01-01', 'Endangered'),
 ('Golden Langur', 'Trachypithecus geei', '1956-03-15', 'Endangered');
 
 
@@ -71,6 +71,10 @@ SELECT * FROM rangers;
 SELECT * FROM species;
 SELECT * FROM sightings;
 
+-- drop table
+-- DROP TABLE sightings;
+-- DROP TABLE species;
+-- DROP TABLE rangers
 
 -- -------------PostgreSQL Problems & Sample Outputs------------------------>
 
@@ -107,5 +111,11 @@ SELECT common_name FROM species
     SELECT species_id FROM sightings
  );
 
+
+-- problem-6: Show the most recent 2 sightings.
+SELECT common_name, sighting_time, name AS ranger_name FROM sightings
+ JOIN species ON sightings.species_id = species.species_id
+ JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+ ORDER BY sighting_time DESC LIMIT 2;
 
 
