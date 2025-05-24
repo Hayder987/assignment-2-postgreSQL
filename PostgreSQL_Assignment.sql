@@ -119,3 +119,8 @@ SELECT common_name, sighting_time, name AS ranger_name FROM sightings
  ORDER BY sighting_time DESC LIMIT 2;
 
 
+-- problem-7: Update all species discovered before year 1800 to have status 'Historic'.
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01' ;
+
