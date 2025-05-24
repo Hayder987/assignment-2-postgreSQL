@@ -87,6 +87,9 @@ FROM (
   GROUP BY species_id
 ) AS grouped_species;
 
--- problem-3:Find all sightings where the location includes "Pass".  using like;
 
+
+-- problem-3:Find all sightings where the location includes "Pass".  using like;
+SELECT * FROM sightings
+ WHERE location ILIKE '%Pass%';
 
