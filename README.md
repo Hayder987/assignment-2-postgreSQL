@@ -1,5 +1,5 @@
 
-# Assignment-5 PostgreSQL
+# Assignment-2 PostgreSQL
 
 ## 1. What is PostgreSQL?
 - PostgreSQL কী?
