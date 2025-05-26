@@ -141,3 +141,4 @@ WHERE ranger_id NOT IN (
     SELECT ranger_id FROM sightings
     WHERE ranger_id IS NOT NULL
 );
+
